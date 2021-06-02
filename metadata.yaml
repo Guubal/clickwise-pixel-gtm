@@ -1,6 +1,8 @@
 homepage: "https://www.clickwise.net/"
 documentation: "https://guubal.github.io/cwbr/documentation/"
 versions:
+  - sha: 29931d8060dfc94b7815198e891d66a043a928aa
+    changeNotes: Updated Total Cost. 
   - sha: f9ec0d9ad0d509b4209b152ad2fd58e0c0d3b2d7
     changeNotes: Fix.  
   - sha: 7487953ea8e216ec35deb7baa75dba4d3a3e663c

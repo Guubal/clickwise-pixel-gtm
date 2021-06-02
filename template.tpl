@@ -103,11 +103,11 @@ ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 	const log = require('logToConsole');
 	
 	// capture values of template fields
-	const campaign = encodeUriComponent(data.CampaignID);
-	const order = encodeUriComponent(data.OrderID);
-	const amount = encodeUriComponent(data.Amount);
-	const currency = encodeUriComponent(data.Currency);
-	const shipping = encodeUriComponent(data.Shipping);
+	const campaign = data.CampaignID;
+	const order = data.OrderID;
+	const amount = data.Amount;
+	const currency = data.Currency;
+	const shipping = data.Shipping;
 	var totalcost = 0;
 	//var log_1 = "";
 	if(shipping == "withshipping"){
@@ -116,7 +116,7 @@ ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 	  totalcost = amount-shipping;
 	} 
 // use the provided APIs to do things like send pixels
-const url = 'https://r.clickwise.net/t/' + campaign + '/sale/' + order + '?total-cost=' + totalcost + '&currency=' + currency;
+const url = 'https://r.clickwise.net/t/' + encodeUriComponent(campaign) + '/sale/' + encodeUriComponent(order) + '?total-cost=' + totalcost + '&currency=' + encodeUriComponent(currency);
 sendPixel(url, data.gtmOnSuccess, data.gtmOnFailure);
 log(url);
 
@@ -189,5 +189,3 @@ scenarios: []
 ___NOTES___
 
 Created on 07/04/2021 10:33:44
-
-
